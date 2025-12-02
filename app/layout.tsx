@@ -2,12 +2,13 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
+import { Toaster } from "@/components/ui/toaster"
 import "./globals.css"
 
 const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
-// <CHANGE> Enhanced SEO metadata for printing business
+// Enhanced SEO metadata for printing business
 export const metadata: Metadata = {
   title: "PrintPro - Professional Printing Services | Business Cards, Brochures & More",
   description:
@@ -73,8 +74,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={`font-sans antialiased`}>
         {children}
+        <Toaster />
         <Analytics />
       </body>
     </html>
   )
 }
+
