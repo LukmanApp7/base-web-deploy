@@ -103,7 +103,7 @@ export function PriceCalculator() {
           <CardContent className="space-y-6">
             <div className="space-y-2">
               <Label htmlFor="calc-product">Product Type</Label>
-              <Select value={product} onValueChange={(v) => setProduct(v as ProductType)}>
+              <Select value={product} onChange={(e) => setProduct(e.target.value as ProductType)}>
                 <SelectTrigger id="calc-product">
                   <SelectValue />
                 </SelectTrigger>
@@ -119,7 +119,7 @@ export function PriceCalculator() {
 
             <div className="space-y-2">
               <Label htmlFor="calc-quantity">Quantity</Label>
-              <Select value={quantity} onValueChange={setQuantity}>
+              <Select value={quantity} onChange={(e) => setQuantity(e.target.value)}>
                 <SelectTrigger id="calc-quantity">
                   <SelectValue />
                 </SelectTrigger>
@@ -135,7 +135,7 @@ export function PriceCalculator() {
 
             <div className="space-y-2">
               <Label htmlFor="calc-finish">Finish</Label>
-              <Select value={finish} onValueChange={setFinish}>
+              <Select value={finish} onChange={(e) => setFinish(e.target.value)}>
                 <SelectTrigger id="calc-finish">
                   <SelectValue />
                 </SelectTrigger>
@@ -151,7 +151,7 @@ export function PriceCalculator() {
 
             <div className="space-y-2">
               <Label htmlFor="calc-turnaround">Turnaround Time</Label>
-              <Select value={turnaround} onValueChange={setTurnaround}>
+              <Select value={turnaround} onChange={(e) => setTurnaround(e.target.value)}>
                 <SelectTrigger id="calc-turnaround">
                   <SelectValue />
                 </SelectTrigger>
@@ -251,3 +251,4 @@ export function PriceCalculator() {
     </div>
   )
 }
+
