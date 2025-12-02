@@ -8,12 +8,10 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Separator } from "@/components/ui/separator"
-import { useToast } from "@/hooks/use-toast"
 import { CreditCard, Lock, ShoppingCart } from "lucide-react"
 import { useRouter } from "next/navigation"
 
 export function CheckoutForm() {
-  const { toast } = useToast()
   const router = useRouter()
   const [processing, setProcessing] = useState(false)
 
@@ -24,10 +22,7 @@ export function CheckoutForm() {
     // Simulate payment processing
     await new Promise((resolve) => setTimeout(resolve, 2000))
 
-    toast({
-      title: "Payment successful!",
-      description: "Your order has been placed. Check your email for confirmation.",
-    })
+    alert("Payment successful! Your order has been placed. Check your email for confirmation.")
 
     setProcessing(false)
 
@@ -184,3 +179,4 @@ export function CheckoutForm() {
     </div>
   )
 }
+

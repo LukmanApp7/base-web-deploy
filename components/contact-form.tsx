@@ -7,10 +7,8 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
-import { useToast } from "@/hooks/use-toast"
 
 export function ContactForm() {
-  const { toast } = useToast()
   const [loading, setLoading] = useState(false)
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -20,10 +18,7 @@ export function ContactForm() {
     // Simulate form submission
     await new Promise((resolve) => setTimeout(resolve, 1000))
 
-    toast({
-      title: "Message sent!",
-      description: "We'll get back to you within 24 hours.",
-    })
+    alert("Message sent! We'll get back to you within 24 hours.")
 
     setLoading(false)
     ;(e.target as HTMLFormElement).reset()
@@ -68,3 +63,4 @@ export function ContactForm() {
     </form>
   )
 }
+

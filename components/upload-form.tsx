@@ -9,12 +9,10 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Textarea } from "@/components/ui/textarea"
-import { useToast } from "@/hooks/use-toast"
 import { Upload, X, FileIcon } from "lucide-react"
 import Link from "next/link"
 
 export function UploadForm() {
-  const { toast } = useToast()
   const [files, setFiles] = useState<File[]>([])
   const [uploading, setUploading] = useState(false)
 
@@ -33,11 +31,7 @@ export function UploadForm() {
     e.preventDefault()
 
     if (files.length === 0) {
-      toast({
-        title: "No files selected",
-        description: "Please upload at least one design file.",
-        variant: "destructive",
-      })
+      alert("No files selected. Please upload at least one design file.")
       return
     }
 
@@ -46,10 +40,7 @@ export function UploadForm() {
     // Simulate file upload
     await new Promise((resolve) => setTimeout(resolve, 2000))
 
-    toast({
-      title: "Files uploaded successfully!",
-      description: "We'll review your design and contact you shortly.",
-    })
+    alert("Files uploaded successfully! We'll review your design and contact you shortly.")
 
     setUploading(false)
     setFiles([])
@@ -226,3 +217,4 @@ export function UploadForm() {
     </Card>
   )
 }
+
