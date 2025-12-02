@@ -10,7 +10,7 @@ export function Footer() {
           <div className="space-y-4">
             <Link href="/" className="flex items-center gap-2 font-bold text-xl">
               <Printer className="h-6 w-6 text-primary" />
-              <span>PrintPro</span>
+              <span>Numani</span>
             </Link>
             <p className="text-sm text-muted-foreground">
               Professional printing services with exceptional quality and fast turnaround times.

@@ -25,7 +25,7 @@ export function Navigation() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 font-bold text-xl">
             <Printer className="h-6 w-6 text-primary" />
-            <span className="text-balance">PrintPro</span>
+            <span className="text-balance">Numani</span>
           </Link>
 
           {/* Desktop Navigation */}
